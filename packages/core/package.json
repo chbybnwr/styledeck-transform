@@ -1,28 +1,5 @@
 {
-  "name": "@vicinage/unplugin",
-  "version": "0.18.42",
-  "description": "Universal bundler plugin for Vicinage",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chbybnwr/vicinage-unplugin.git"
-  },
-  "homepage": "https://github.com/chbybnwr/vicinage-unplugin",
-  "bugs": {
-    "url": "https://github.com/chbybnwr/vicinage-unplugin/issues"
-  },
-  "funding": "https://github.com/sponsors/chbybnwr",
-  "keywords": [
-    "bundler",
-    "css",
-    "inline",
-    "jsx",
-    "plugin",
-    "stylex",
-    "unplugin",
-    "vite",
-    "vicinage"
-  ],
+  "name": "@styledeck/transform",
   "type": "module",
   "exports": {
     ".": {
