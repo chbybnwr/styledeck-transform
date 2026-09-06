@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "@chbybnwr/tsconfig/tsconfig.base.json",
+    "@chbybnwr/tsconfig/tsconfig.node24.json",
+    "@chbybnwr/tsconfig/tsconfig.library.json",
+    "@chbybnwr/tsconfig/tsconfig.bundled.json"
+  ],
+  "include": ["src"],
+  "exclude": ["src/**/*.spec*.*", "src/test/**/*", "src/**/fixtures/**/*"],
+
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.build.tsbuildinfo",
+
+    "rootDir": "./src/",
+    "outDir": "./dist/",
+
+    "skipLibCheck": true,
+    "noEmit": true,
+    "noUnusedParameters": false,
+
+    "paths": {
+      "#/*": ["./src/*"]
+    }
+  }
+}

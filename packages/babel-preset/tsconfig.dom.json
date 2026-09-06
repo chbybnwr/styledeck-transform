@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "@chbybnwr/tsconfig/tsconfig.base.json",
+    "@chbybnwr/tsconfig/tsconfig.dom.json",
+    "@chbybnwr/tsconfig/tsconfig.bundled.json"
+  ],
+  "include": ["src/**/*.tsx"],
+  "exclude": [],
+
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.dom.tsbuildinfo",
+
+    "paths": {
+      "#/*": ["./src/*"]
+    },
+
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+
+    "noEmit": true,
+
+    "noUnusedLocals": false
+  }
+}
