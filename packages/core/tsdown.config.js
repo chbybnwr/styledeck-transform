@@ -6,7 +6,6 @@ export { tsdownConfig as default }
 const tsdownConfig = {
   entry: {
     index: 'src/index.ts',
-    'adapters/*': 'src/adapters/*',
   },
 
   alias: {
@@ -19,16 +18,7 @@ const tsdownConfig = {
 
   deps: {
     onlyBundle: [],
-    neverBundle: [
-      '@farmfe/core',
-      '@nuxt/kit',
-      '@nuxt/schema',
-      'esbuild',
-      'rollup',
-      'vite',
-      'webpack',
-      //
-    ],
+    neverBundle: [],
   },
 
   outputOptions: {

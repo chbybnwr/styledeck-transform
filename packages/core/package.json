@@ -29,10 +29,6 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./*": {
-      "import": "./dist/adapters/*.js",
-      "require": "./dist/adapters/*.cjs"
-    },
     "./package.json": "./package.json"
   },
   "imports": {
@@ -66,12 +62,9 @@
   "packageManager": "pnpm@12.2.1",
   "dependencies": {
     "@babel/core": "^8.0.1",
-    "@babel/helper-plugin-utils": "^8.0.1",
     "@babel/parser": "^8.0.4",
     "@babel/traverse": "^8.0.4",
     "@babel/types": "^8.0.4",
-    "@stylexjs/babel-plugin": "~0.19.0",
-    "@stylexjs/unplugin": "~0.19.0",
     "@typescript/typescript6": "^6.0.2",
     "magic-string": "^1.2.3",
     "picomatch": "^4.0.7",
@@ -82,9 +75,6 @@
     "@eslint/js": "^10.0.1",
     "@eslint/json": "^2.1.0",
     "@eslint/markdown": "^8.0.3",
-    "@farmfe/core": "^1.7.11",
-    "@nuxt/kit": "^4.5.2",
-    "@nuxt/schema": "^4.5.2",
     "@stylexjs/stylex": "~0.19.0",
     "@stylistic/eslint-plugin": "^5.10.0",
     "@txe/eslint-plugin-x": "~0.2.1",
@@ -96,7 +86,6 @@
     "@vitest/eslint-plugin": "^1.6.27",
     "cspell": "^10.2.0",
     "csstype": "^3.2.3",
-    "esbuild": "~0.28.2",
     "eslint": "^10.9.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-import-resolver-typescript": "^4.4.5",
@@ -112,7 +101,6 @@
     "typescript-eslint": "^8.69.0",
     "vite": "^8.2.2",
     "vitest": "^4.1.11",
-    "vue": "^3.5.42",
-    "webpack": "^5.110.3"
+    "vue": "^3.5.42"
   }
 }
