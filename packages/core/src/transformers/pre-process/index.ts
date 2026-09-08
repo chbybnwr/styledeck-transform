@@ -59,7 +59,7 @@ const createPreProcessFn = (options: Options | undefined = {}) => {
     context?: {
       ast?: ParseResult
     },
-  ): Exclude<TransformResult, string> => {
+  ): TransformResult | null => {
     const ast =
       context?.ast ??
       parse(code, {
@@ -105,7 +105,7 @@ const createPreProcessFn = (options: Options | undefined = {}) => {
 
     return main()
 
-    function main(): Exclude<TransformResult, string> {
+    function main(): TransformResult | null {
       const editor = new MagicString(code)
       const hoistedStyles = new Set<string>()
 
@@ -1145,6 +1145,6 @@ import type { Options } from '#/options'
 import { parse } from '@babel/parser'
 import type { ParseResult } from '@babel/parser'
 import { pluginName } from '#/shared/config'
-import type { TransformResult } from 'unplugin'
+import type { TransformResult } from '#/shared/transformation.js'
 import { traverse } from '#/shared/traverse'
 //

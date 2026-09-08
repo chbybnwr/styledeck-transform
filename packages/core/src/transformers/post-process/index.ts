@@ -25,7 +25,7 @@ const createPostProcessFn = (
     context?: {
       ast?: ParseResult
     },
-  ): Exclude<TransformResult, string> => {
+  ): TransformResult | null => {
     const ast =
       context?.ast ??
       parse(code, {
@@ -298,6 +298,6 @@ import { parse } from '@babel/parser'
 import type { ParseResult } from '@babel/parser'
 import { pluginName } from '#/shared/config'
 import type { StringLiteral } from '@babel/types'
-import type { TransformResult } from 'unplugin'
+import type { TransformResult } from '#/shared/transformation.js'
 import { traverse } from '#/shared/traverse'
 //
