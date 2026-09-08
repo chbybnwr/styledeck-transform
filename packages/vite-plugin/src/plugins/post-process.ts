@@ -1,6 +1,6 @@
 export { createPlugin as default }
 
-const createPlugin: UnpluginFactory<Options | undefined, false> = (options) => {
+const createPlugin = (options?: Options): Plugin => {
   const postProcess = createPostProcessFn(options)
 
   return {
@@ -27,8 +27,8 @@ const createPlugin: UnpluginFactory<Options | undefined, false> = (options) => {
   }
 }
 
-import { createPostProcessFn } from '#/transformers/post-process'
-import type { Options } from '#/options'
+import { createPostProcessFn } from '@styledeck/core'
+import type { Options } from '@styledeck/core'
+import type { Plugin } from 'vite'
 import { pluginName } from '#/shared/config'
-import type { UnpluginFactory } from 'unplugin'
 //

@@ -1,6 +1,6 @@
 export { createPlugin as default }
 
-const createPlugin: UnpluginFactory<Options | undefined, false> = (options) => {
+const createPlugin = (options?: Options): Plugin => {
   const preProcess = createPreProcessFn(options)
 
   return {
@@ -23,8 +23,8 @@ const createPlugin: UnpluginFactory<Options | undefined, false> = (options) => {
   }
 }
 
-import { createPreProcessFn } from '#/transformers/pre-process'
-import type { Options } from '#/options'
+import { createPreProcessFn } from '@styledeck/core'
+import type { Options } from '@styledeck/core'
+import type { Plugin } from 'vite'
 import { pluginName } from '#/shared/config'
-import type { UnpluginFactory } from 'unplugin'
 //
