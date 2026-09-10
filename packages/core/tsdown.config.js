@@ -16,16 +16,6 @@ const tsdownConfig = {
     tsconfig: 'tsconfig.build.json',
   },
 
-  deps: {
-    onlyBundle: [],
-    neverBundle: [],
-  },
-
-  outputOptions: {
-    exports: 'named',
-  },
-
   minify: true,
   fixedExtension: false,
-  format: ['esm', 'cjs'],
 }
