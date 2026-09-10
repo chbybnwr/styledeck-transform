@@ -13,7 +13,7 @@ function preset(
       () => ({
         overrides: [
           {
-            test: /\.(t|j)s$/u,
+            test: /\.(t|j)sx?$/u,
             exclude: /node_modules/u,
             plugins: [[postStylex, styledeckOptions]],
           },
