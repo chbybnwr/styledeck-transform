@@ -26,7 +26,7 @@ function createPlugin(options: Options & Partial<UserOptions> = {}): Plugin[] {
   ]
 }
 
-import type { Options } from '@styledeck/core'
+import type { Options } from '@styledeck/transform'
 import type { Plugin } from 'vite'
 import postProcess from './plugins/post-process'
 import preProcess from './plugins/pre-process'

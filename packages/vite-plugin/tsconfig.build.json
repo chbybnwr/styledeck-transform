@@ -12,10 +12,9 @@
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.build.tsbuildinfo",
 
     "rootDir": "./src/",
-    "outDir": "./dist/",
+    "outDir": "./lib/",
 
     "skipLibCheck": true,
-    "noEmit": true,
     "noUnusedParameters": false,
 
     "paths": {

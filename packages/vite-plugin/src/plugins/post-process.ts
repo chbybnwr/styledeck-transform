@@ -27,8 +27,8 @@ const createPlugin = (options?: Options): Plugin => {
   }
 }
 
-import { createPostProcessFn } from '@styledeck/core'
-import type { Options } from '@styledeck/core'
+import { createPostProcessFn } from '@styledeck/transform'
+import type { Options } from '@styledeck/transform'
 import type { Plugin } from 'vite'
 import { pluginName } from '#/shared/config'
 //

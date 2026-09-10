@@ -4,7 +4,7 @@
     "@chbybnwr/tsconfig/tsconfig.node24.json"
   ],
 
-  "include": ["./*"],
+  "include": ["./*", "./scripts/*"],
 
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",

@@ -10,7 +10,7 @@ const createPlugin = (options?: Options): Plugin => {
     transform: {
       filter: {
         id: {
-          include: /\.(t|j)s$/u,
+          include: /\.(t|j)sx?$/u,
           exclude: /node_modules/,
         },
         code: {
@@ -18,13 +18,13 @@ const createPlugin = (options?: Options): Plugin => {
         },
       },
 
-      handler: (code: string) => preProcess(code),
+      handler: (code) => preProcess(code),
     },
   }
 }
 
-import { createPreProcessFn } from '@styledeck/core'
-import type { Options } from '@styledeck/core'
+import { createPreProcessFn } from '@styledeck/transform'
+import type { Options } from '@styledeck/transform'
 import type { Plugin } from 'vite'
 import { pluginName } from '#/shared/config'
 //
