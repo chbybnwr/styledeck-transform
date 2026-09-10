@@ -6,6 +6,100 @@ settings:
 
 importers:
 
+  packages/babel-preset:
+    dependencies:
+      '@babel/core':
+        specifier: ^8.0.1
+        version: 8.0.1
+      '@babel/helper-plugin-utils':
+        specifier: ^8.0.1
+        version: 8.0.1(@babel/core@8.0.1)
+      '@babel/parser':
+        specifier: ^8.0.4
+        version: 8.0.4
+      '@styledeck/transform':
+        specifier: workspace:*
+        version: link:../core
+      '@stylexjs/babel-plugin':
+        specifier: ~0.19.0
+        version: 0.19.0(supports-color@8.1.1)
+    devDependencies:
+      '@chbybnwr/tsconfig':
+        specifier: github:chbybnwr/tsconfig
+        version: https://codeload.github.com/chbybnwr/tsconfig/tar.gz/642e42bd201c9b071761b39f1b559c0a1c765b5e
+      '@eslint/js':
+        specifier: ^10.0.1
+        version: 10.0.1(eslint@10.10.0(supports-color@8.1.1))
+      '@eslint/json':
+        specifier: ^2.1.0
+        version: 2.1.0
+      '@eslint/markdown':
+        specifier: ^8.0.3
+        version: 8.0.3(supports-color@8.1.1)
+      '@stylistic/eslint-plugin':
+        specifier: ^5.10.0
+        version: 5.10.0(eslint@10.10.0(supports-color@8.1.1))
+      '@txe/eslint-plugin-x':
+        specifier: ~0.2.1
+        version: 0.2.1(@typescript/typescript6@6.0.2)(eslint@10.10.0(supports-color@8.1.1))(supports-color@8.1.1)
+      '@types/node':
+        specifier: ^26.4.1
+        version: 26.4.1
+      '@typescript-eslint/parser':
+        specifier: ^8.69.0
+        version: 8.69.0(@typescript/typescript6@6.0.2)(eslint@10.10.0(supports-color@8.1.1))(supports-color@8.1.1)
+      '@typescript/native':
+        specifier: npm:typescript@^7.0.2
+        version: typescript@7.0.2
+      '@vitest/coverage-v8':
+        specifier: ^4.1.11
+        version: 4.1.11(vitest@4.1.11)
+      '@vitest/eslint-plugin':
+        specifier: ^1.6.27
+        version: 1.6.27(@typescript-eslint/eslint-plugin@8.69.0(@typescript-eslint/parser@8.69.0(@typescript/typescript6@6.0.2)(eslint@10.10.0(supports-color@8.1.1))(supports-color@8.1.1))(@typescript/typescript6@6.0.2)(eslint@10.10.0(supports-color@8.1.1))(supports-color@8.1.1))(@typescript/typescript6@6.0.2)(eslint@10.10.0(supports-color@8.1.1))(supports-color@8.1.1)(vitest@4.1.11)
+      cspell:
+        specifier: ^10.2.0
+        version: 10.2.2
+      eslint:
+        specifier: ^10.9.1
+        version: 10.10.0(supports-color@8.1.1)
+      eslint-config-prettier:
+        specifier: ^10.1.8
+        version: 10.1.8(eslint@10.10.0(supports-color@8.1.1))
+      eslint-import-resolver-typescript:
+        specifier: ^4.4.5
+        version: 4.4.5(eslint-plugin-import-x@4.17.1(@typescript-eslint/utils@8.69.0(@typescript/typescript6@6.0.2)(eslint@10.10.0(supports-color@8.1.1))(supports-color@8.1.1))(eslint@10.10.0(supports-color@8.1.1))(supports-color@8.1.1))(eslint@10.10.0(supports-color@8.1.1))(supports-color@8.1.1)
+      eslint-plugin-import-x:
+        specifier: ^4.17.1
+        version: 4.17.1(@typescript-eslint/utils@8.69.0(@typescript/typescript6@6.0.2)(eslint@10.10.0(supports-color@8.1.1))(supports-color@8.1.1))(eslint@10.10.0(supports-color@8.1.1))(supports-color@8.1.1)
+      eslint-plugin-n:
+        specifier: ^18.3.0
+        version: 18.3.0(@typescript/typescript6@6.0.2)(eslint@10.10.0(supports-color@8.1.1))
+      eslint-plugin-unicorn:
+        specifier: ^74.0.0
+        version: 74.0.0(eslint@10.10.0(supports-color@8.1.1))
+      globals:
+        specifier: ^17.12.0
+        version: 17.12.0
+      prettier:
+        specifier: ^3.9.6
+        version: 3.9.6
+      tsdown:
+        specifier: ~0.22.14
+        version: 0.22.14(@typescript/typescript6@6.0.2)
+      typescript:
+        specifier: npm:@typescript/typescript6@^6.0.2
+        version: '@typescript/typescript6@6.0.2'
+      typescript-eslint:
+        specifier: ^8.69.0
+        version: 8.69.0(@typescript/typescript6@6.0.2)(eslint@10.10.0(supports-color@8.1.1))(supports-color@8.1.1)
+      vite:
+        specifier: ^8.2.2
+        version: 8.2.2(@types/node@26.4.1)(yaml@2.9.0)
+      vitest:
+        specifier: ^4.1.11
+        version: 4.1.11(@types/node@26.4.1)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@26.4.1)(yaml@2.9.0))
+
   packages/core:
     dependencies:
       '@babel/core':
@@ -284,6 +378,12 @@ packages:
   '@babel/helper-plugin-utils@7.29.7':
     resolution: {integrity: sha512-G7sHYigPY17oO5SYWnfD/0MTBwVR781S/JI643e/JhUYgVgWE/61SoW3NH9KWUKyKq5LVh3npif99Wkt6j86Jw==}
     engines: {node: '>=6.9.0'}
+
+  '@babel/helper-plugin-utils@8.0.1':
+    resolution: {integrity: sha512-3PKFgjTyPlhFhorfP+SjKQxLViIL++zWjFOO4hGriYU+Bsm983DxEM1JmDRJVWXV0O9npu+xXRqz7Pbd3mh70g==}
+    engines: {node: ^22.18.0 || >=24.11.0}
+    peerDependencies:
+      '@babel/core': ^8.0.0
 
   '@babel/helper-string-parser@7.29.7':
     resolution: {integrity: sha512-Pb5ijPrZ89GDH8223L4UP8i6QApWxs04RbPQJTeWDV0/keR2E36MeKnyr6LYmUUvqRRI+Iv87SuF1W6ErINzYw==}
@@ -3333,6 +3433,10 @@ snapshots:
       - supports-color
 
   '@babel/helper-plugin-utils@7.29.7': {}
+
+  '@babel/helper-plugin-utils@8.0.1(@babel/core@8.0.1)':
+    dependencies:
+      '@babel/core': 8.0.1
 
   '@babel/helper-string-parser@7.29.7': {}
 

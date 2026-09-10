@@ -12,6 +12,7 @@ const vitestConfig = {
     coverage: {
       exclude: ['src/test/**/*'],
     },
+    passWithNoTests: true,
   },
 }
 

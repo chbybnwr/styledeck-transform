@@ -1,10 +1,10 @@
-export { preProcessPlugin as default }
+export { postProcessPlugin as default }
 
-const preProcessPlugin = declare(function (
+const postProcessPlugin = declare(function (
   api: PluginAPI,
   options: Options | undefined,
 ) {
-  const preProcess = createPreProcessFn(options)
+  const postProcess = createPostProcessFn(options)
 
   return {
     name: pluginName,
@@ -14,7 +14,7 @@ const preProcessPlugin = declare(function (
         return
       }
 
-      const result = preProcess(file.code, {
+      const result = postProcess(file.code, {
         // @ts-expect-error outdated type packages?
         ast: file.ast,
       })
@@ -24,7 +24,6 @@ const preProcessPlugin = declare(function (
       }
 
       file.code = result.code
-
       const ast = parse(result.code, {
         sourceType: 'module',
         plugins: ['typescript', 'jsx'],
@@ -39,9 +38,9 @@ const preProcessPlugin = declare(function (
   }
 })
 
-import { createPreProcessFn } from '#/transformers/pre-process'
+import { createPostProcessFn } from '@styledeck/transform'
 import { declare } from '@babel/helper-plugin-utils'
-import type { Options } from '#/options'
+import type { Options } from '@styledeck/transform'
 import { parse } from '@babel/parser'
 import type { PluginAPI } from '@babel/core'
 import { pluginName } from '#/shared/config'

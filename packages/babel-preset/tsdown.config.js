@@ -1,12 +1,9 @@
-import { fileURLToPath } from 'node:url'
-
 export { tsdownConfig as default }
 
 /** @type {import('tsdown').UserConfig} */
 const tsdownConfig = {
   entry: {
     index: 'src/index.ts',
-    'adapters/*': 'src/adapters/*',
   },
 
   alias: {
@@ -18,24 +15,19 @@ const tsdownConfig = {
   },
 
   deps: {
-    onlyBundle: [],
-    neverBundle: [
-      '@farmfe/core',
-      '@nuxt/kit',
-      '@nuxt/schema',
-      'esbuild',
-      'rollup',
-      'vite',
-      'webpack',
+    alwaysBundle: [
+      '@styledeck/transform',
       //
     ],
-  },
-
-  outputOptions: {
-    exports: 'named',
+    neverBundle: Object.keys(corePackageJson.dependencies),
+    //
   },
 
   minify: true,
   fixedExtension: false,
   format: ['esm', 'cjs'],
 }
+
+import corePackageJson from '../core/package.json' with { type: 'json' }
+import { fileURLToPath } from 'node:url'
+//

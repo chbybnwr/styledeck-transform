@@ -1,5 +1,4 @@
 packages:
-  - 'packages/vite-plugin'
-  - 'packages/core'
+  - 'packages/*'
 allowBuilds:
   unrs-resolver: true
