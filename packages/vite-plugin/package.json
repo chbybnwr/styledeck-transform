@@ -25,9 +25,6 @@
     ".": "./dist/index.js",
     "./package.json": "./package.json"
   },
-  "imports": {
-    "#/*": "./dist/*"
-  },
   "scripts": {
     "prepack": "pn run build && pn pkg delete scripts packageManager devDependencies && node --experimental-strip-types ../../scripts/prepack.ts",
     "check": "pn run type-check && pn run test --coverage && pn run lint && pn run format --check && pn run spell-check",
