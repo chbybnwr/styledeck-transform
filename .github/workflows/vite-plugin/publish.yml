@@ -20,8 +20,8 @@ jobs:
           node-version-file: '.node-version'
           registry-url: https://registry.npmjs.org/
           package-manager-cache: false
-      - run: pnpm install
-      - run: npm publish
+      - run: pn install
+      - run: pn stage publish
 
   build:
     runs-on: ubuntu-latest
@@ -32,8 +32,8 @@ jobs:
         with:
           node-version-file: '.node-version'
           cache: 'pnpm'
-      - run: pnpm install
-      - run: npm run build
+      - run: pn install
+      - run: pn run build
 
   compile:
     runs-on: ubuntu-latest
@@ -44,8 +44,8 @@ jobs:
         with:
           node-version-file: '.node-version'
           cache: 'pnpm'
-      - run: pnpm install
-      - run: npm run compile
+      - run: pn install
+      - run: pn run compile
 
   test:
     runs-on: ubuntu-latest
@@ -59,8 +59,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
-      - run: pnpm install
-      - run: npm run test -- --coverage --reporter=verbose
+      - run: pn install
+      - run: pn run test --coverage --reporter=verbose
 
   lint:
     runs-on: ubuntu-latest
@@ -71,8 +71,8 @@ jobs:
         with:
           node-version-file: '.node-version'
           cache: 'pnpm'
-      - run: pnpm install
-      - run: npm run lint
+      - run: pn install
+      - run: pn run lint
 
   format:
     runs-on: ubuntu-latest
@@ -83,8 +83,8 @@ jobs:
         with:
           node-version-file: '.node-version'
           cache: 'pnpm'
-      - run: pnpm install
-      - run: npm run format -- --check
+      - run: pn install
+      - run: pn run format --check
 
   spellcheck:
     runs-on: ubuntu-latest
@@ -95,5 +95,5 @@ jobs:
         with:
           node-version-file: '.node-version'
           cache: 'pnpm'
-      - run: pnpm install
-      - run: npm run spellcheck
+      - run: pn install
+      - run: pn run spellcheck
