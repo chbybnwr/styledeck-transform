@@ -11,7 +11,7 @@ jobs:
     permissions:
       id-token: write
       contents: read
-    needs: [build, compile, test, lint]
+    needs: [build, type-check, test, lint]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -36,7 +36,7 @@ jobs:
       - run: pn install
       - run: pn run build
 
-  compile:
+  type-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -46,7 +46,7 @@ jobs:
           node-version-file: '.node-version'
           cache: 'pnpm'
       - run: pn install
-      - run: pn run compile
+      - run: pn run type-check
 
   test:
     runs-on: ubuntu-latest
@@ -87,7 +87,7 @@ jobs:
       - run: pn install
       - run: pn run format --check
 
-  spellcheck:
+  spell-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -97,4 +97,4 @@ jobs:
           node-version-file: '.node-version'
           cache: 'pnpm'
       - run: pn install
-      - run: pn run spellcheck
+      - run: pn run spell-check
