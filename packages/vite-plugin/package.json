@@ -7,7 +7,7 @@
     "type": "git",
     "url": "git+https://github.com/chbybnwr/styledeck-transform.git"
   },
-  "homepage": "https://github.com/chbybnwr/styledeck-transform/vite-plugin",
+  "homepage": "https://github.com/chbybnwr/styledeck-transform/packages/vite-plugin",
   "bugs": {
     "url": "https://github.com/chbybnwr/styledeck-transform/issues"
   },
