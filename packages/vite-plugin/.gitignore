@@ -2,7 +2,7 @@
 
 !/src/
 !/etc/
-!/scripts/
+!/docs/
 
 !/.github
 !/.npmignore
