@@ -12,11 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: pnpm/action-setup@v6
-      - uses: actions/setup-node@v6
-        with:
-          node-version-file: '.node-version'
-          cache: 'pnpm'
+      - uses: pnpm/setup@v2
       - run: pn --filter @styledeck/transform install
       - run: pn --filter @styledeck/transform run build
       - run: pn --filter ${{ inputs.filter }} install
@@ -26,11 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: pnpm/action-setup@v6
-      - uses: actions/setup-node@v6
-        with:
-          node-version-file: '.node-version'
-          cache: 'pnpm'
+      - uses: pnpm/setup@v2
       - run: pn --filter @styledeck/transform install
       - run: pn --filter ${{ inputs.filter }} install
       - run: pn --filter ${{ inputs.filter }} run extract
@@ -39,11 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: pnpm/action-setup@v6
-      - uses: actions/setup-node@v6
-        with:
-          node-version-file: '.node-version'
-          cache: 'pnpm'
+      - uses: pnpm/setup@v2
       - run: pn --filter @styledeck/transform install
       - run: pn --filter @styledeck/transform run type-check
       - run: pn --filter ${{ inputs.filter }} install
@@ -53,11 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: pnpm/action-setup@v6
-      - uses: actions/setup-node@v6
-        with:
-          node-version-file: '.node-version'
-          cache: 'pnpm'
+      - uses: pnpm/setup@v2
       - run: pn --filter @styledeck/transform install
       - run: pn --filter @styledeck/transform run test --coverage
       - run: pn --filter ${{ inputs.filter }} install
@@ -67,11 +51,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: pnpm/action-setup@v6
-      - uses: actions/setup-node@v6
-        with:
-          node-version-file: '.node-version'
-          cache: 'pnpm'
+      - uses: pnpm/setup@v2
       - run: pn --filter @styledeck/transform install
       - run: pn --filter @styledeck/transform run lint
       - run: pn --filter ${{ inputs.filter }} install
