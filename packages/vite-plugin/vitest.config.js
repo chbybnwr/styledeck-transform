@@ -9,6 +9,8 @@ const vitestConfig = {
   },
 
   test: {
+    name: 'vite-plugin',
+
     coverage: {
       exclude: ['src/test/**/*'],
     },

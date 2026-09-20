@@ -9,6 +9,7 @@ const vitestConfig = {
   },
 
   test: {
+    name: 'core',
     coverage: {
       exclude: ['src/test/**/*'],
     },
