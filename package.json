@@ -1,0 +1,9 @@
+{
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.2.1",
+      "onFail": "error"
+    }
+  }
+}
