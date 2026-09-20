@@ -30,6 +30,7 @@ jobs:
         with:
           node-version-file: .node-version
       - run: pn --filter @styledeck/transform install
+      - run: pn --filter @styledeck/transform run build
       - run: pn --filter ${{ inputs.filter }} install
       - run: pn --filter ${{ inputs.filter }} run extract
 
