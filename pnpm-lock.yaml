@@ -297,8 +297,8 @@ importers:
         specifier: ^8.0.3
         version: 8.0.3(supports-color@8.1.1)
       '@stylexjs/stylex':
-        specifier: ~0.19.0
-        version: 0.19.0
+        specifier: ~0.18.0
+        version: 0.18.3
       '@stylistic/eslint-plugin':
         specifier: ^5.10.0
         version: 5.10.0(eslint@10.10.0(supports-color@8.1.1))
@@ -354,11 +354,11 @@ importers:
         specifier: ^3.9.6
         version: 3.9.6
       solarwindcss:
-        specifier: file:modules/solarwindcss-0.37.10.tgz
-        version: file:packages/core/modules/solarwindcss-0.37.10.tgz
+        specifier: ~0.36.10
+        version: 0.36.10
       styledeck:
-        specifier: file:modules/styledeck-0.8.22.tgz
-        version: file:packages/core/modules/styledeck-0.8.22.tgz(@stylexjs/stylex@0.19.0)
+        specifier: ~0.10.24
+        version: 0.10.24(@stylexjs/stylex@0.18.3)
       tsdown:
         specifier: ~0.22.14
         version: 0.22.14(@typescript/typescript6@6.0.2)
@@ -1157,6 +1157,9 @@ packages:
 
   '@stylexjs/shared@0.19.0':
     resolution: {integrity: sha512-7Yym70cQH5sPzJHgzJX3FkL9ZCptbC3IbiRijN9YLYU/5OywB/3c519Xv1DOzvxqjv8urSxh98/9HxLaPG7sDg==}
+
+  '@stylexjs/stylex@0.18.3':
+    resolution: {integrity: sha512-15gDzAJAorOE0yzxaWLNxldW2aqdmCiLG5QcPD8nmVCVqvrWp0Asgv45zk7LtN86WJb/4Ym9eQ6qT5MJW59tWQ==}
 
   '@stylexjs/stylex@0.19.0':
     resolution: {integrity: sha512-CnUFp7YMaDLDeemsWOfJgoC/gKM5P/yBNMcpJaE6ChJmXr7s0DJwSeGTTlHJcqqwN9OW1qGtmARWLFhGZN1pTA==}
@@ -3038,9 +3041,8 @@ packages:
     resolution: {integrity: sha512-kCZr2V3ch9i00x8zXRhjUNVcjG9ijES5dDudkXvUVCT5QlJNQWElSJdZqyPemffHoLNUYwOcou0Fy+ojN0uHSQ==}
     engines: {node: '>= 18'}
 
-  solarwindcss@file:packages/core/modules/solarwindcss-0.37.10.tgz:
-    resolution: {integrity: sha512-l78BvxmEVvlN6g2ML9JQJkUkjlNB8hOaxaOrxDdfNbKa/MoKutFLnEUa4uQU+6ab1uInVmK1kGX4MQNFmGCHYA==, tarball: file:packages/core/modules/solarwindcss-0.37.10.tgz}
-    version: 0.37.10
+  solarwindcss@0.36.10:
+    resolution: {integrity: sha512-3wjxfEk4WF0i/hrFrdTpXKxkbbHBhEn4V2zp7LCEzhI1lbNeBwq9fSCrhS3/m5Rn41VuOVScTgAIrPBaAqYDUA==}
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
@@ -3071,9 +3073,8 @@ packages:
     resolution: {integrity: sha512-SlyRoSkdh1dYP0PzclLE7r0M9sgbFKKMFXpFRUMNuKhQSbC6VQIGzq3E0qsfvGJaUFJPGv6Ws1NZ/haTAjfbMA==}
     engines: {node: '>=12'}
 
-  styledeck@file:packages/core/modules/styledeck-0.8.22.tgz:
-    resolution: {integrity: sha512-Gd3gUqkHoFMvVBkUuvSv1vgOZuf25w9Bjn0l3wjyVacb90RUxRRFRI8citFvX9/VuwuckDsmKoUNmAvIBoTtHw==, tarball: file:packages/core/modules/styledeck-0.8.22.tgz}
-    version: 0.8.22
+  styledeck@0.10.24:
+    resolution: {integrity: sha512-DO0+TMHyomu1e5HGn9ivfXOe3oq4ytrLY9u8owUVPPsI9T4xY7iGtzCsxbz+TVM2T7c0WjA5jm7bWW0fIAO3/Q==}
     peerDependencies:
       '@stylexjs/stylex': ~0.19.0
 
@@ -4200,6 +4201,12 @@ snapshots:
       - supports-color
 
   '@stylexjs/shared@0.19.0': {}
+
+  '@stylexjs/stylex@0.18.3':
+    dependencies:
+      css-mediaquery: 0.1.2
+      invariant: 2.2.4
+      styleq: 0.2.1
 
   '@stylexjs/stylex@0.19.0':
     dependencies:
@@ -6065,9 +6072,9 @@ snapshots:
 
   smol-toml@1.8.0: {}
 
-  solarwindcss@file:packages/core/modules/solarwindcss-0.37.10.tgz:
+  solarwindcss@0.36.10:
     dependencies:
-      '@stylexjs/stylex': 0.19.0
+      '@stylexjs/stylex': 0.18.3
 
   source-map-js@1.2.1: {}
 
@@ -6085,9 +6092,9 @@ snapshots:
 
   strip-indent@4.1.1: {}
 
-  styledeck@file:packages/core/modules/styledeck-0.8.22.tgz(@stylexjs/stylex@0.19.0):
+  styledeck@0.10.24(@stylexjs/stylex@0.18.3):
     dependencies:
-      '@stylexjs/stylex': 0.19.0
+      '@stylexjs/stylex': 0.18.3
 
   styleq@0.2.1: {}
 

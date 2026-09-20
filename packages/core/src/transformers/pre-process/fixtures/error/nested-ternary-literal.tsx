@@ -6,12 +6,12 @@ function Example({ isEnabled }: { isEnabled: boolean }) {
       styleDeck={[
         isEnabled
           ? [
-              lineClamped,
+              lineClamp.base,
               {
                 WebkitLineClamp: 3,
               },
             ]
-          : notLineClamped,
+          : lineClamp.none,
         {
           color: 'red',
         },
@@ -20,6 +20,5 @@ function Example({ isEnabled }: { isEnabled: boolean }) {
   )
 }
 
-import { lineClamped } from 'solarwindcss'
-import { notLineClamped } from 'solarwindcss'
+import { lineClamp } from 'solarwindcss'
 //

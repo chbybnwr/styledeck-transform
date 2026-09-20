@@ -10,25 +10,28 @@ declare module 'styledeck' {
   }
 
   interface CSSFeatures {
-    attributeSelector:
+    attributeSelectors: (
       | AttributeSelector
       | (AttributeSelector extends `[${infer Attribute}]`
           ? `[${Attribute}=${string}]`
           : never)
+    )[]
 
-    pseudoClass:
+    pseudoClasses: (
       | Exclude<PseudoClass, ParameterizedPseudoClass>
       | `${ParameterizedPseudoClass}(`
       | `${ParameterizedPseudoClass}${string})`
+    )[]
 
-    pseudoElement:
+    pseudoElements: (
       | Exclude<PseudoElement, ParameterizedPseudoElement>
       | `${ParameterizedPseudoElement}(`
       | `${ParameterizedPseudoElement}${string})`
       // ::cue can be used both with and without parameter
       | '::cue'
+    )[]
 
-    atRule: AtRule | `${AtRule} ${string}`
+    atRules: (AtRule | `${AtRule} ${string}`)[]
   }
 }
 
