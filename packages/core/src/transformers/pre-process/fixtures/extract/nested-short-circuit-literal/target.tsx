@@ -4,14 +4,14 @@ function Example({ isEnabled }: { isEnabled: boolean }) {
   return (
     <div
       {...__stylex_props(
-        isEnabled && [lineClamped, style_9_11._],
+        isEnabled && [lineClamp.base, style_9_11._],
         style_13_9._,
       )}
     />
   )
 }
 
-import { lineClamped } from 'solarwindcss'
+import { lineClamp } from 'solarwindcss'
 //
 
 const style_9_11 = __stylex_create({

@@ -1,0 +1,27 @@
+name: proofread
+
+on:
+  workflow_call:
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+      - run: pn install
+      - run: pn --recursive run format --check
+
+  spell-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+      - run: pn install
+      - run: pn --recursive run spell-check

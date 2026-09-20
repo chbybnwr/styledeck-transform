@@ -33,14 +33,14 @@
   },
   "scripts": {
     "prepack": "pn run build && pn pkg delete scripts packageManager devDependencies && node --experimental-strip-types ../../scripts/prepack.ts",
-    "check": "pn run typecheck && pn run test --coverage && pn run lint && pn run format --check && pn run spellcheck",
+    "check": "pn run type-check && pn run test --coverage && pn run lint && pn run format --check && pn run spell-check",
     "build": "tsdown",
     "compile": "tsc --project tsconfig.build.json",
-    "typecheck": "tsc --build",
+    "type-check": "tsc --build",
     "test": "vitest run --silent=passed-only",
     "lint": "eslint ./",
     "format": "prettier ./",
-    "spellcheck": "cspell ./"
+    "spell-check": "cspell ./"
   },
   "engines": {
     "runtime": {
@@ -49,7 +49,6 @@
       "onFail": "error"
     }
   },
-  "packageManager": "pnpm@12.2.1",
   "dependencies": {
     "@babel/core": "^8.0.1",
     "@babel/helper-plugin-utils": "^8.0.1",

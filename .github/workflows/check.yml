@@ -1,0 +1,76 @@
+name: check
+
+on:
+  workflow_call:
+    inputs:
+      filter:
+        default: '\!@styledeck/transform'
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+      - run: pn --filter @styledeck/transform install
+      - run: pn --filter @styledeck/transform run build
+      - run: pn --filter ${{ inputs.filter }} install
+      - run: pn --filter ${{ inputs.filter }} run build
+
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+      - run: pn --filter @styledeck/transform install
+      - run: pn --filter @styledeck/transform run build
+      - run: pn --filter ${{ inputs.filter }} install
+      - run: pn --filter ${{ inputs.filter }} run extract
+
+  type-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+      - run: pn --filter @styledeck/transform install
+      - run: pn --filter @styledeck/transform run type-check
+      - run: pn --filter @styledeck/transform run build
+      - run: pn --filter ${{ inputs.filter }} install
+      - run: pn --filter ${{ inputs.filter }} run type-check
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+      - run: pn --filter @styledeck/transform install
+      - run: pn --filter @styledeck/transform run test --coverage
+      - run: pn --filter ${{ inputs.filter }} install
+      - run: pn --filter ${{ inputs.filter }} run test --coverage
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+      - run: pn --filter @styledeck/transform install
+      - run: pn --filter @styledeck/transform run lint
+      - run: pn --filter @styledeck/transform run build
+      - run: pn --filter ${{ inputs.filter }} install
+      - run: pn --filter ${{ inputs.filter }} run lint
