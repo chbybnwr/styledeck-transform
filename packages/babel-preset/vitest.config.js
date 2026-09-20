@@ -9,6 +9,7 @@ const vitestConfig = {
   },
 
   test: {
+    name: 'babel-preset',
     coverage: {
       exclude: ['src/test/**/*'],
     },
