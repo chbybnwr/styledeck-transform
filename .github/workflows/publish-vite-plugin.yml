@@ -22,7 +22,7 @@ jobs:
       - run: pn --filter @styledeck/transform install
       - run: pn --filter @styledeck/transform run build
       - run: pn --filter @styledeck/vite-plugin install
-      - run: pn stage publish --no-git-checks
+      - run: pn --filter @styledeck/vite-plugin stage publish --no-git-checks
 
   check:
     uses: ./.github/workflows/check.yml
