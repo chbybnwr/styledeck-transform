@@ -1,13 +1,9 @@
 {
+  "packageManager": "pnpm@12.5.1",
   "devEngines": {
     "runtime": {
       "name": "node",
       "version": "26.x",
-      "onFail": "error"
-    },
-    "packageManager": {
-      "name": "pnpm",
-      "version": "12.x",
       "onFail": "error"
     }
   }
