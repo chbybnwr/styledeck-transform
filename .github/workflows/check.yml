@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
@@ -22,7 +22,7 @@ jobs:
       - run: pn --filter ${{ inputs.filter }} run build
 
   extract:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
@@ -35,7 +35,7 @@ jobs:
       - run: pn --filter ${{ inputs.filter }} run extract
 
   type-check:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
@@ -49,7 +49,7 @@ jobs:
       - run: pn --filter ${{ inputs.filter }} run type-check
 
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
@@ -62,7 +62,7 @@ jobs:
       - run: pn --filter ${{ inputs.filter }} run test --coverage
 
   lint:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
