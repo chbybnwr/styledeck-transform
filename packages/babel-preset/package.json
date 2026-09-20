@@ -49,7 +49,6 @@
       "onFail": "error"
     }
   },
-  "packageManager": "pnpm@12.2.1",
   "dependencies": {
     "@babel/core": "^8.0.1",
     "@babel/helper-plugin-utils": "^8.0.1",

@@ -37,7 +37,6 @@
       "onFail": "warn"
     }
   },
-  "packageManager": "pnpm@12.2.1",
   "dependencies": {
     "@babel/core": "^8.0.1",
     "@babel/parser": "^8.0.4",
