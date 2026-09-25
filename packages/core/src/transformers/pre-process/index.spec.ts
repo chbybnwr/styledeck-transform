@@ -17,6 +17,7 @@ test.each([
   { label: 'extract/nested' },
   { label: 'extract/nested-short-circuit-literal' },
   { label: 'extract/on-macro' },
+  { label: 'extract/on-macro-multiple' },
 ])('$label', async ({ label }) => {
   const transform = createPreProcessFn({
     jsxAttributeSchema: 'dom-properties',
