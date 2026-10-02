@@ -37,6 +37,28 @@ const createPostProcessFn = (
     const helperImports = new Set<string>()
 
     traverse(ast, {
+      ...(jsxAttributeSchema === 'html-attributes' && {
+        ImportDeclaration: (path) => {
+          const { node } = path
+
+          if (
+            node.source.value === '@stylexjs/stylex' &&
+            node.specifiers.some(
+              (specifier) =>
+                isImportSpecifier(specifier) &&
+                isIdentifier(specifier.imported) &&
+                specifier.imported.name === 'attrs' &&
+                specifier.local.name === '__stylex_attrs',
+            )
+          ) {
+            editor.overwrite(
+              node.start!,
+              node.end!,
+              `import { '~toAttrs' as __stylex_attrs } from '${pluginName}'`,
+            )
+          }
+        },
+      }),
       JSXOpeningElement: (path) => {
         const { node } = path
 
@@ -260,13 +282,6 @@ const createPostProcessFn = (
       },
     })
 
-    if (jsxAttributeSchema === 'html-attributes') {
-      editor.replaceAll(
-        `import { attrs as __stylex_attrs } from '@stylexjs/stylex'`,
-        `import { '~toAttrs' as __stylex_attrs } from '${pluginName}'`,
-      )
-    }
-
     if (helperImports.size > 0) {
       editor.append('\n' + [...helperImports].join('\n'))
     }
@@ -285,6 +300,7 @@ const createPostProcessFn = (
 import { getJSXAttributeSchema } from '#/jsx-attribute-schema.js'
 import { isArrayExpression } from '@babel/types'
 import { isIdentifier } from '@babel/types'
+import { isImportSpecifier } from '@babel/types'
 import { isJSXAttribute } from '@babel/types'
 import { isJSXExpressionContainer } from '@babel/types'
 import { isJSXIdentifier } from '@babel/types'
